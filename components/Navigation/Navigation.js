@@ -1,19 +1,25 @@
-import Link from "next/link";
+import NavigationDesktop from "./NavigationDesktop";
+import NavigationMobile from "./NavigationMobile";
 
 const Navigation = () => {
+  const links = [
+    {
+      name: "Projects",
+      slug: "projects",
+    },
+    {
+      name: "About",
+      slug: "about",
+    },
+    {
+      name: "Contact",
+      slug: "contact",
+    },
+  ];
   return (
     <nav className="text-xl font-medium z-20 relative">
-      <ul className="flex gap-12">
-        <Link href={"/"}>
-          <li>Home</li>
-        </Link>
-        {/* <Link href={"/about"}>
-          <li>About</li>
-        </Link> */}
-        <Link href={"/contact"}>
-          <li>Contact</li>
-        </Link>
-      </ul>
+      <NavigationDesktop links={links} />
+      <NavigationMobile />
     </nav>
   );
 };
